@@ -5,15 +5,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;800&family=Lexend:wght@400;500;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;800&family=Lexend:wght@400;500;600;800&display=swap" rel="stylesheet">
   <title>Satria Aji Nursahid | Family</title>
 
   <style>
+    /* Konfigurasi Font & Warna agar Sejenis */
+    :root {
+      --bg-color: #A388EE;
+      --accent-color: #F4D738;
+      --text-dark: #000000;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Lexend', sans-serif;
+    }
+
     /* Reset & Base */
     body {
       overflow-x: hidden;
       margin: 0;
-      background-color: #A388EE; /* Tetap ungu agar konsisten */
+      background-color: var(--bg-color);
+      font-family: var(--font-body); /* Gunakan Lexend untuk body */
     }
 
     .main-content {
@@ -22,7 +32,7 @@
       margin: 0 auto;
     }
 
-    /* --- NAVBAR --- */
+    /* --- NAVBAR (Disamakan dengan page lain) --- */
     .nav-menu ul {
       list-style: none;
       display: flex;
@@ -33,15 +43,17 @@
     .nav-menu ul li a {
       text-decoration: none;
       color: #000;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
+      font-family: var(--font-heading);
+      font-weight: 800; /* Ditebalkan sesuai vibes sebelumnya */
+      text-transform: uppercase;
+      font-size: 0.9rem;
       padding: 5px 15px;
       border: 3px solid transparent;
       transition: all 0.2s;
     }
 
     .nav-menu ul li a.active {
-      background: #F4D738;
+      background: var(--accent-color);
       border: 3px solid #000;
       box-shadow: 4px 4px 0px #000;
       color: black;
@@ -54,10 +66,10 @@
     }
 
     .family-header h1 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-heading);
       font-weight: 800;
       font-size: clamp(2.5rem, 8vw, 4rem);
-      color: #F4D738;
+      color: var(--accent-color);
       -webkit-text-stroke: 2px #000;
       text-shadow: 8px 8px 0px #000;
       text-transform: uppercase;
@@ -71,8 +83,8 @@
       padding: 20px;
       display: inline-block;
       box-shadow: 8px 8px 0px #000;
-      font-family: 'Lexend', sans-serif;
-      font-weight: 500;
+      font-family: var(--font-body);
+      font-weight: 600; /* Lebih tebal biar mantap */
     }
 
     /* --- FAMILY GRID --- */
@@ -111,17 +123,19 @@
     }
 
     .family-info h3 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-heading);
       font-weight: 800;
       margin: 0;
       font-size: 1.5rem;
+      text-transform: uppercase; /* Disamakan dengan gaya kartu fwend */
       color: #000;
     }
 
     .family-info p {
-      font-family: 'Lexend', sans-serif;
+      font-family: var(--font-body);
+      font-weight: 500;
       margin: 5px 0 0;
-      color: #555;
+      color: #333;
     }
 
     .tag-relation {
@@ -129,6 +143,7 @@
       background: greenyellow;
       padding: 2px 10px;
       border: 2px solid #000;
+      font-family: var(--font-heading); /* Font heading untuk tag */
       font-weight: 800;
       font-size: 0.8rem;
       margin-bottom: 10px;
@@ -165,7 +180,7 @@
       </nav>
 
       <div class="header-actions">
-        <a href="https://wa.me/6285892750662" class="btn-cta">Let's talk!</a>
+        <a href="https://instagram.com/sathphire_" class="btn-cta">Let's talk!</a>
       </div>
     </div>
   </header>
@@ -182,44 +197,66 @@
       <div class="family-card">
         <div class="tag-relation">Father</div>
         <div class="photo-frame">
-          <img src="src/ayah.jpg" alt="Ayah Satria">
+          <img src="src/Dad.jpeg" alt="Ayah Satria">
         </div>
         <div class="family-info">
-          <h3>Nama Ayah</h3>
+          <h3>Secret</h3>
           <p>The man who taught me everything about hard work.</p>
         </div>
       </div>
 
       <div class="family-card">
-        <div class="tag-relation" style="background: #ff69b4; color: #fff;">Mother</div>
+        <div class="tag-relation" style="background: #ff69b4; color: #fff;">Me</div>
         <div class="photo-frame">
-          <img src="src/ibu.jpg" alt="Ibu Satria">
+          <img src="src/Sath Child.jpeg" alt="Me">
         </div>
         <div class="family-info">
-          <h3>Nama Ibu</h3>
+          <h3>Satria Aji Nursahid</h3>
+          <p>The designated noisemaker. I don't just walk into a room, I bring the whole party with me.</p>
+        </div>
+      </div>
+
+      <div class="family-card">
+        <div class="tag-relation" style="background: #00d4ff;">Mother</div>
+        <div class="photo-frame">
+          <img src="src/Mom.jpeg" alt="Ibu Satria">
+        </div>
+        <div class="family-info">
+          <h3>Secret</h3>
           <p>The heart of our home and the best cook in the world.</p>
         </div>
       </div>
 
       <div class="family-card">
-        <div class="tag-relation" style="background: #00d4ff;">Sibling</div>
+        <div class="tag-relation" style="background: #ffa500;">Sister</div>
         <div class="photo-frame">
-          <img src="src/saudara.jpg" alt="Saudara Satria">
+          <img src="src/Sister.jpeg" alt="Kakak Satria">
         </div>
         <div class="family-info">
-          <h3>Nama Saudara</h3>
-          <p>Partner in crime since day one.</p>
+          <h3>Secret</h3>
+          <p>My 0% interest bank who always complains but still lets me borrow money (that I’ll never return).</p>
         </div>
       </div>
 
-      <div class="family-card" style="grid-column: span 1;">
-        <div class="tag-relation" style="background: #F4D738;">Whole Family</div>
+      <div class="family-card">
+        <div class="tag-relation" style="background: #9370db; color: #fff;">My Family</div>
         <div class="photo-frame">
-          <img src="src/keluarga-besar.jpg" alt="Keluarga Besar">
+          <img src="src/FamilyPhoto.jpeg" alt="Satria's Family">
         </div>
         <div class="family-info">
-          <h3>The Nursahid's</h3>
+          <h3>Satria's Family</h3>
           <p>Happiness is home-made.</p>
+        </div>
+      </div>
+
+      <div class="family-card">
+        <div class="tag-relation" style="background: #F4D738;">Brother</div>
+        <div class="photo-frame">
+          <img src="src/Brother.jpeg" alt="Brother">
+        </div>
+        <div class="family-info">
+          <h3>Secret</h3>
+          <p>Teaches me all the trouble-making skills my parents don't know about.</p>
         </div>
       </div>
     </div>
