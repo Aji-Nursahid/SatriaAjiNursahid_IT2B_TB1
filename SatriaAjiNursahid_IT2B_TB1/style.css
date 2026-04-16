@@ -9,18 +9,18 @@ body {
 /* Container Header Utama */
 .neo-header {
   padding: 20px 40px;
-  background-color: #a388ee; /* Warna dasar halaman */
+  background-color: #a388ee;
 }
 
 .header-container {
   background: white;
   border: 3px solid black;
-  border-radius: 50px; /* Membuat bentuk kapsul */
+  border-radius: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-  box-shadow: 0px 6px 0px black; /* Hard shadow ke bawah */
+  box-shadow: 0px 6px 0px black;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -61,12 +61,12 @@ body {
 }
 
 .nav-menu a:hover {
-  color: #a388ee; /* Warna ungu web kamu */
+  color: #a388ee;
 }
 
 .nav-menu a.active {
-  color: #a388ee; /* Warna ungu atau warna aksen hovermu */
-  border-bottom: 3px solid #000; /* Opsional: tambah garis bawah biar makin jelas */
+  color: #a388ee;
+  border-bottom: 3px solid #000;
 }
 
 /* Tombol Kanan (CTA) */
@@ -84,7 +84,7 @@ body {
 }
 
 .btn-cta.active {
-  background-color: #ffd600; /* Misalnya warna kuning */
+  background-color: #ffd600;
   box-shadow: 2px 2px 0px black;
   transform: translate(2px, 2px);
 }
@@ -92,7 +92,7 @@ body {
 .btn-personal, .btn-cta:hover {
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px black;
-  background: #C3FF00; /* Warna aksen Lime agar kontras */
+  background: #C3FF00;
 }
 
 .btn-personal, .btn-cta:active {
@@ -143,8 +143,8 @@ body {
   font-weight: bold;
   cursor: pointer;
   box-shadow: 5px 5px 0px 0px #000;
-  display: inline-block; /* Wajib agar padding & margin fungsi normal */
-  text-decoration: none; /* Menghilangkan garis bawah link */
+  display: inline-block;
+  text-decoration: none;
   color: black;
 }
 
