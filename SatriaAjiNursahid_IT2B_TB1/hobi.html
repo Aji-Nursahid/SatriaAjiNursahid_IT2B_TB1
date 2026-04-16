@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;800&family=Lexend:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Satria Aji Nursahid | Hobby</title>
+
+  <style>
+    /* Konfigurasi Warna & Font Pro */
+    :root {
+      --bg-color: #a388ee;    /* Ungu Utama */
+      --accent-color: #F4D738; /* Kuning Neobrutalism */
+      --text-dark: #000000;
+      --card-white: #ffffff;
+      --stroke-width: 3px;
+      /* Font stack agar vibes sama semua */
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Lexend', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      margin: 0;
+      color: var(--text-dark);
+      font-family: var(--font-body); /* Pakai Lexend untuk body */
+    }
+
+    .main-content {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Section Styling */
+    .hobby-section {
+      padding-bottom: 100px;
+      overflow: hidden;
+      margin-top: -20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: var(--font-heading); /* Font heading */
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+    }
+
+    .section-title1 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 30px;
+      font-family: var(--font-heading); /* Font heading super bold */
+      font-weight: 800;
+      font-size: clamp(2rem, 8vw, 4.5rem); 
+      text-transform: uppercase;
+      position: relative;
+      color: var(--accent-color);
+      -webkit-text-stroke: 2px var(--text-dark);
+      text-shadow: 8px 8px 0px var(--text-dark);
+    }
+
+    /* Garis Dekorasi Samping */
+    .section-title1::before, .section-title1::after {
+      content: '';
+      width: 25%;
+      height: 6px;
+      background: var(--text-dark);
+      position: absolute;
+      top: 55%;
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .section-title1::before, .section-title1::after { display: block; }
+      .section-title1::before { left: 0; }
+      .section-title1::after { right: 0; }
+    }
+
+    /* Deskripsi Box */
+    .hobby-desc {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px auto;
+      background: var(--card-white);
+      padding: 20px;
+      border: var(--stroke-width) solid var(--text-dark);
+      box-shadow: 8px 8px 0px var(--text-dark);
+      font-weight: 600; /* Font lebih tebal sedikit */
+      line-height: 1.6;
+      font-family: var(--font-body);
+    }
+
+    /* Carousel Logic */
+    .carousel-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      perspective: 1200px;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      width: 260px;
+      height: 360px;
+      transform-style: preserve-3d;
+    }
+
+    .carousel-wrapper:hover .carousel-item {
+      animation-play-state: paused;
+    }
+
+    .carousel-item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 4px solid var(--text-dark);
+      background: var(--card-white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 10px 10px 0px var(--text-dark);
+      animation: slide-auto 18s infinite linear;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Overlay Judul saat Hover */
+    .carousel-item::after {
+      content: attr(data-name);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: var(--accent-color);
+      color: var(--text-dark);
+      padding: 15px 5px;
+      font-family: var(--font-heading); /* Nama item pakai Space Grotesk */
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+      border-top: 4px solid var(--text-dark);
+      transform: translateY(100%);
+      transition: transform 0.1s ease;
+      font-size: 0.9rem;
+    }
+
+    .carousel-item:hover::after { transform: translateY(0); }
+    .carousel-item:hover { box-shadow: 15px 15px 0px var(--text-dark); }
+
+    @keyframes slide-auto {
+      0%, 100% { transform: translateX(0) scale(1.2); z-index: 5; opacity: 1; border-color: var(--accent-color); }
+      20% { transform: translateX(135%) scale(0.85); opacity: 0.8; z-index: 2; border-color: var(--text-dark); }
+      40% { transform: translateX(270%) scale(0.7); opacity: 0.3; z-index: 1; }
+      60% { transform: translateX(-270%) scale(0.7); opacity: 0.3; z-index: 1; }
+      80% { transform: translateX(-135%) scale(0.85); opacity: 0.8; z-index: 2; }
+    }
+
+    .carousel-item:nth-child(1) { animation-delay: 0s; }
+    .carousel-item:nth-child(2) { animation-delay: -3.6s; }
+    .carousel-item:nth-child(3) { animation-delay: -7.2s; }
+    .carousel-item:nth-child(4) { animation-delay: -10.8s; }
+    .carousel-item:nth-child(5) { animation-delay: -14.4s; }
+
+    /* --- Navbar Styling --- */
+    .nav-menu ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+    }
+
+    .nav-menu ul li a {
+      text-decoration: none;
+      color: #000;
+      font-family: var(--font-heading); /* Font navbar disamakan */
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      padding: 5px 15px;
+      border: 3px solid transparent; 
+      transition: all 0.2s;
+    }
+
+    .nav-menu ul li a.active {
+      background: var(--accent-color);
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      color: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="neo-header">
+    <div class="header-container">
+      <div class="logo">
+        <img src="src/Kucing putih.jpg" alt="logo">
+        <span>Sath's Pages</span>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./personal.html">Personal</a></li>
+          <li><a href="./keluarga.html">Family</a></li>
+          <li><a href="./teman.html">Fwends</a></li>
+          <li><a href="./hobi.html" class="active">Hobby</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="https://wa.me/6285892750662" class="btn-cta">Let's talk!</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    
+    <section class="hobby-section">
+      <h2 class="section-title">My Favorite</h2>
+      <h1 class="section-title1">Movies/Series</h1>
+      <div class="hobby-desc">
+        I really love consuming media on the internet. Here are some movies that really left an impression on me.
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div class="carousel-item" data-name="Sousou no Frieren"><img src="src/Sousou No Frieren.webp" alt="1"></div>
+          <div class="carousel-item" data-name="A Man Called Otto"><img src="src/A man called Otto.webp" alt="2"></div>
+          <div class="carousel-item" data-name="Everything Everywhere All At Once"><img src="src/Everything everywhere all at once.jpg" alt="3"></div>
+          <div class="carousel-item" data-name="Monster"><img src="src/Monsters.webp" alt="4"></div>
+          <div class="carousel-item" data-name="Witch Hat Atelier"><img src="src/Witch Hat Atelier.webp" alt="5"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hobby-section">
+      <h2 class="section-title">My Favorite</h2>
+      <h1 class="section-title1">Books/Novels</h1>
+      <div class="hobby-desc">
+        I'd like to call myself a bookworm. Nothing beats the feeling of getting lost in a good story. These are the books that I would recommend you.
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-wrapper">
+          <div class="carousel-item" data-name="The Brothers Karamazov"><img src="src/TBK.jpg" alt="1"></div>
+          <div class="carousel-item" data-name="Meniti Bianglala"><img src="src/Meniti Bianglala.jpg" alt="2"></div>
+          <div class="carousel-item" data-name="Catcher in the Rye"><img src="src/The Catcher in the rye.webp" alt="3"></div>
+          <div class="carousel-item" data-name="Katabasis"><img src="src/Katabasis.jpg" alt="4"></div>
+          <div class="carousel-item" data-name="East of Eden"><img src="src/East of Eden.jpg" alt="5"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

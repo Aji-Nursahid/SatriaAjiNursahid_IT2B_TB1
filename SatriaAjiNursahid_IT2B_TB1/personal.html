@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Lexend:wght@400;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Satria Aji Nursahid</title>
+
+  <style>
+    .main-content {
+      padding: 40px;
+      text-align: left;
+      position: relative;
+      z-index: 2; /* Di atas bintang dekorasi */
+    }
+
+    /* Poin 3: Decorative Stars */
+    .decor-star {
+      position: fixed;
+      font-size: 4rem;
+      color: #a388ee;
+      z-index: 1; /* Di bawah konten utama */
+      opacity: 0.3;
+      pointer-events: none;
+      user-select: none;
+    }
+    .star-1 { top: 15%; right: 10%; transform: rotate(15deg); }
+    .star-2 { bottom: 10%; left: 5%; transform: rotate(-20deg); }
+
+    /* Layout Personal Grid */
+    .personal-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Profile Card (Kiri) */
+    .profile-card {
+      background: #FDFD96;
+      border: 4px solid #000;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 10px 10px 0px #000;
+      text-align: center;
+      height: fit-content;
+    }
+
+    .profile-img-container {
+      border: 4px solid #000;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      background: white;
+    }
+
+    .neo-img {
+      width: 100%;
+      display: block;
+    }
+
+    .bio-info h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      margin: 15px 0 10px 0;
+    }
+
+    /* Poin 2: Social Icons Fixed */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-item {
+      width: 45px;
+      height: 45px;
+      border: 3px solid #000;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #000;
+      box-shadow: 4px 4px 0px #000;
+      transition: 0.2s;
+    }
+
+    .social-item:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #000;
+      color: #fff;
+    }
+    /* Brand Colors on Hover */
+    .social-item.ig:hover { background: #E1306C; }
+    .social-item.gh:hover { background: #333; }
+    .social-item.in:hover { background: #0077b5; }
+
+    /* Details Section (Kanan) */
+    .details-section {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-box {
+      border: 4px solid #000;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 10px 10px 0px #000;
+    }
+
+    .info-box h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .bg-blue { background-color: #00D1FF; }
+    .bg-pink { background-color: greenyellow; color: black; }
+
+    /* Poin 4: CTA Download CV */
+    .cv-container {
+      margin-top: 25px;
+      text-align: right;
+    }
+
+    .btn-download {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #FF5733;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      border: 4px solid #000;
+      box-shadow: 6px 6px 0px #000;
+      text-transform: uppercase;
+      transition: 0.2s;
+    }
+
+    .btn-download:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0px #000;
+    }
+
+    /* List Pendidikan */
+    .education-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .education-list li {
+      margin-bottom: 15px;
+      padding-left: 15px;
+      border-left: 4px solid #000;
+    }
+
+    .year {
+      font-weight: 800;
+      font-family: 'Space Grotesk', sans-serif;
+      display: block;
+    }
+
+    @keyframes floating {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.decor-star {
+  /* ... kode kamu yang sudah ada ... */
+  animation: floating 5s ease-in-out infinite;
+}
+
+.star-2 {
+  animation-delay: 2s; /* Biar gerakannya nggak barengan sama star-1 */
+}
+
+/* --- Tambahan untuk Navbar --- */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: #000;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  padding: 5px 15px;
+  border: 3px solid transparent; /* Supaya saat active tidak geser layout */
+  transition: all 0.2s;
+}
+
+/* Style Kotak Kuning untuk Menu Active */
+.nav-menu ul li a.active {
+  background: #F4D738; /* Kuning Neobrutalism */
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0px #000;
+  color: #000;
+}
+
+    @media (max-width: 850px) {
+      .personal-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="decor-star star-1">✦</div>
+  <div class="decor-star star-2">✦</div>
+
+  <header class="neo-header">
+    <div class="header-container">
+      <div class="logo">
+        <img src="src/Kucing putih.jpg" alt="logo">
+        <span>Sath's Pages</span>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./personal.html" class="active">Personal</a></li>
+          <li><a href="./keluarga.html">Family</a></li>
+          <li><a href="./teman.html">Fwends</a></li>
+          <li><a href="./hobi.html">Hobby</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a href="https://wa.me/6285892750662" class="btn-cta" target="_blank">Let's talk!</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="personal-grid">
+      <section class="profile-card">
+        <div class="profile-img-container">
+          <img src="src/Satria Aji N.JPG" alt="Satria Aji Nursahid" class="neo-img">
+        </div>
+        <div class="bio-info">
+          <h2>Satria Aji Nursahid</h2>
+          <p><strong>Status:</strong> Student / Developer</p>
+          <p><strong>Location:</strong> Indonesia</p>
+          <p><strong>Motto:</strong> "Just make your way and let it happens."</p>
+          
+          <div class="social-links">
+            <a href="https://instagram.com/sathphire_" class="social-item ig" title="Instagram" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://github.com/Aji-Nursahid" class="social-item gh" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/satria-aji-nursahid-1a107a287?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-item in" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="details-section">
+        <div class="info-box bg-blue">
+          <h3>Background</h3>
+          <p>I am currently a first-year Information Technology student at Politeknik Negeri Jakarta, where I spend most of my days decoding the complexities of software and network logic. My journey into the world of tech started with a simple curiosity about how the digital tools we use daily actually function under the hood. Choosing a vocational path at PNJ was a deliberate move; I wanted an environment that values hands-on practice as much as theory. Right now, I’m in the "grind phase," navigating through my first semester of intense coding labs and foundational projects, all while trying to master the art of turning coffee into functional syntax.
+
+When I’m not in the lab, you’ll likely find me diving into the world of Cybersecurity or contributing to Open Source projects. I’ve always been drawn to the "detective work" side of IT, finding vulnerabilities and understanding how to build more resilient systems. I’m that teammate who actually enjoys debugging, seeing every error message as a puzzle rather than a setback. Whether it’s a late-night hackathon or a casual Discord study session, I thrive in collaborative environments where we can break things down and build them back better than they were before.
+
+Outside of the terminal, I try to keep my life balanced by exploring street photography and competitive gaming. I find that framing a shot through a camera lens helps me clear my head, giving me a fresh perspective that I can bring back to my UI/UX designs or logic structures. For me, being an IT student isn't just about the lines of code I write; it’s about the mindset of constant problem-solving and adaptation. I’m just at the beginning of my path here at PNJ, but I’m fully committed to sharpening my skills to eventually make a real impact in the tech industry.</p>
+        </div>
+
+        <div class="info-box bg-pink">
+          <h3>Education</h3>
+          <ul class="education-list">
+            <li>
+              <span class="year">2025 - Now</span>
+              <p>Politeknik Negeri Jakarta - Teknik Informatika</p>
+            </li>
+            <li>
+              <span class="year">2020 - 2024</span>
+              <p>SMK Negeri 68 Jakarta - Teknik Fabrikasi Logam & Manufaktur</p>
+            </li>
+          </ul>
+          <div class="cv-container">
+            <a href="#" class="btn-download">Download My CV</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+
+</html>

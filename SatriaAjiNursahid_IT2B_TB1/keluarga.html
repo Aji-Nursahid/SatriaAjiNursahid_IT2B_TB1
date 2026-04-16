@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;800&family=Lexend:wght@400;500;800&display=swap" rel="stylesheet">
+  <title>Satria Aji Nursahid | Family</title>
+
+  <style>
+    /* Reset & Base */
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      background-color: #A388EE; /* Tetap ungu agar konsisten */
+    }
+
+    .main-content {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* --- NAVBAR --- */
+    .nav-menu ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+    }
+
+    .nav-menu ul li a {
+      text-decoration: none;
+      color: #000;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      padding: 5px 15px;
+      border: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .nav-menu ul li a.active {
+      background: #F4D738;
+      border: 3px solid #000;
+      box-shadow: 4px 4px 0px #000;
+      color: black;
+    }
+
+    /* --- HEADER SECTION --- */
+    .family-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .family-header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      color: #F4D738;
+      -webkit-text-stroke: 2px #000;
+      text-shadow: 8px 8px 0px #000;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      margin-top: -10px;
+    }
+
+    .intro-box {
+      background: #fff;
+      border: 4px solid #000;
+      padding: 20px;
+      display: inline-block;
+      box-shadow: 8px 8px 0px #000;
+      font-family: 'Lexend', sans-serif;
+      font-weight: 500;
+    }
+
+    /* --- FAMILY GRID --- */
+    .family-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .family-card {
+      background: #fff;
+      border: 4px solid #000;
+      padding: 15px;
+      box-shadow: 10px 10px 0px #000;
+      transition: transform 0.3s ease;
+    }
+
+    .family-card:hover {
+      transform: translateY(-10px) rotate(2deg);
+    }
+
+    .photo-frame {
+      width: 100%;
+      height: 250px;
+      border: 3px solid #000;
+      overflow: hidden;
+      margin-bottom: 15px;
+      background: #eee;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .family-info h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      margin: 0;
+      font-size: 1.5rem;
+      color: #000;
+    }
+
+    .family-info p {
+      font-family: 'Lexend', sans-serif;
+      margin: 5px 0 0;
+      color: #555;
+    }
+
+    .tag-relation {
+      display: inline-block;
+      background: greenyellow;
+      padding: 2px 10px;
+      border: 2px solid #000;
+      font-weight: 800;
+      font-size: 0.8rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    /* --- DECORATION --- */
+    .star {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header class="neo-header">
+    <div class="header-container">
+      <div class="logo">
+        <img src="src/Kucing putih.jpg" alt="logo">
+        <span>Sath's Pages</span>
+      </div>
+    
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./personal.html">Personal</a></li>
+          <li><a href="./keluarga.html" class="active">Family</a></li>
+          <li><a href="./teman.html">Fwends</a></li>
+          <li><a href="./hobi.html">Hobby</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/6285892750662" class="btn-cta">Let's talk!</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="family-header">
+      <h1>Family Members</h1>
+      <div class="intro-box">
+        The people who always have my back. Meet my supporting system!
+      </div>
+    </section>
+
+    <div class="family-grid">
+      <div class="family-card">
+        <div class="tag-relation">Father</div>
+        <div class="photo-frame">
+          <img src="src/ayah.jpg" alt="Ayah Satria">
+        </div>
+        <div class="family-info">
+          <h3>Nama Ayah</h3>
+          <p>The man who taught me everything about hard work.</p>
+        </div>
+      </div>
+
+      <div class="family-card">
+        <div class="tag-relation" style="background: #ff69b4; color: #fff;">Mother</div>
+        <div class="photo-frame">
+          <img src="src/ibu.jpg" alt="Ibu Satria">
+        </div>
+        <div class="family-info">
+          <h3>Nama Ibu</h3>
+          <p>The heart of our home and the best cook in the world.</p>
+        </div>
+      </div>
+
+      <div class="family-card">
+        <div class="tag-relation" style="background: #00d4ff;">Sibling</div>
+        <div class="photo-frame">
+          <img src="src/saudara.jpg" alt="Saudara Satria">
+        </div>
+        <div class="family-info">
+          <h3>Nama Saudara</h3>
+          <p>Partner in crime since day one.</p>
+        </div>
+      </div>
+
+      <div class="family-card" style="grid-column: span 1;">
+        <div class="tag-relation" style="background: #F4D738;">Whole Family</div>
+        <div class="photo-frame">
+          <img src="src/keluarga-besar.jpg" alt="Keluarga Besar">
+        </div>
+        <div class="family-info">
+          <h3>The Nursahid's</h3>
+          <p>Happiness is home-made.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
